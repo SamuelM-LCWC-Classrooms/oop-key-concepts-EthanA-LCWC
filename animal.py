@@ -29,23 +29,33 @@ class Animal:
         return "This animal makes a sound"
 
 class Dog(Animal):
-    def __init__(self, name, species, age, adopted, breed):
+    def __init__(self, name, species, age, breed, adopted):
         super().__init__(name, species, age, adopted)
         self.__breed = breed
     
+    def get_breed(self):
+        return self.__breed
+    def set_breed(self, new_breed):
+        self.__breed = new_breed
+    
     def __str__(self):
-        return f"{self.__name} {self.__species} {self.__age} {self.adopted} {self.breed}"
+        return f"Name: {self.get_name()}\nSpecies: {self.get_species()}\nAge: {self.get_age()}\nBreed: {self.get_breed()}\nAdopted status: {self.get_adopted()}"
     
     def make_sound(self):
         return "Woof!"
 
 class Cat(Animal):
-    def __init__(self, name, species, age, adopted, indoor_only):
+    def __init__(self, name, species, age, indoor_only, adopted):
         super().__init__(name, species, age, adopted)
         self.__indoor_only = indoor_only
     
+    def get_indoor_only(self):
+        return self.__indoor_only
+    def set_indoor_only(self, new_indoor_only):
+        self.__indoor_only = new_indoor_only
+    
     def __str__(self):
-        return f"{self.__name} {self.__species} {self.__age} {self.adopted} {self.indoor_only}"
+        return f"Name: {self.get_name()}\nSpecies: {self.get_species()}\nAge: {self.get_age()}\nIndoor only status: {self.get_indoor_only()}\nAdopted status: {self.get_adopted()}"
     
     def make_sound(self):
         return "Meow!"
